@@ -7,18 +7,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>GAC Technology // Dashboard</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/all.css" rel="stylesheet">
+    <link href="{{ mix('css/all.css') }}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="{{ mix('js/all.js') }}"></script>
   </head>
 
   <body>
@@ -29,6 +29,5 @@
       @yield('content')
     </div>
 
-    <script src="js/all.js"></script>
   </body>
 </html>

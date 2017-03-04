@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +13,24 @@
 |
  */
 
-\DB::listen(function ($sql) {
-    var_dump($sql->sql);
+\DB::connection('mysql')->listen(function ($sql) {
+    // var_dump($sql->sql);
 });
 
 Route::get('/', function () {
     return view('app');
+});
+
+Route::get('/test', function () {
+    $i = App\Indicator::create([
+        'name' => 'vehicules_num',
+    ]);
+    App\Measure::create([
+        'indicator_id' => $i->id,
+        'value'        => 100000,
+        'issued_at'    => Carbon::now(),
+    ]);
+    return App\Measure::find(1);
 });
 
 Route::get('/reports', 'ReportsController@show');

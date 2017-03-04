@@ -16,13 +16,17 @@ const { mix } = require('laravel-mix');
 		'public/css'
 	);
 
-   	mix.scripts([
-   		'resources/assets/js/vendor/jquery.min.js',
-   		'resources/assets/js/vendor/bootstrap.js',
-   		//'app.js'
-   	], 'public/js/all.js');
+	mix.scripts([
+		'resources/assets/js/vendor/jquery.min.js',
+		'resources/assets/js/vendor/bootstrap.js',
+      'node_modules/highcharts/highcharts.js'
+	], 'public/js/all.js')
+   ;
+   //.version();
 
-   	mix.styles([
-   		'resources/assets/css/vendor/bootstrap.css',
-   	    'public/css/app.css'
-   	], 'public/css/all.css');
+	mix.styles([
+		'resources/assets/css/vendor/bootstrap.css',
+	    'public/css/app.css'
+	], 'public/css/all.css')
+   ;
+   //.version();

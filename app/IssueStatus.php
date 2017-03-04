@@ -14,6 +14,11 @@ class IssueStatus extends Model
     protected $table = "issue_statuses";
 
     /**
+     * @var string
+     */
+    protected $connection = 'redmine';
+
+    /**
      * @return mixed
      */
     public function issues()
